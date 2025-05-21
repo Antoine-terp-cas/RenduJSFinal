@@ -1,0 +1,3 @@
+Problem Encountered: url to site wasn't pasted correctly into fetch
+https://developer.mozilla.org/fr/docs/Web/HTTP/Guides/CORS/Errors/CORSRequestNotHttp
+

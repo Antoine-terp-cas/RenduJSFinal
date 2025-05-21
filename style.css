@@ -1,0 +1,74 @@
+/* Colors */
+:root {
+    --TextCol: #ffffff;
+    --backCol: #000000;
+    --cardBorder: #fff;
+    --cardInMansion: #1b2d2e;
+    --cardInSpace: #3d3147;
+    --cardInParis: #223039;
+}
+
+/* Modify to all */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--backCol);
+    color: var(--TextCol);
+    cursor: crosshair;
+    text-align: center;
+}
+
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Main section */
+#jsSec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#jsSec>* {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* H1 removal */
+h1 {
+    font-size: 0px;
+}
+
+/* Div touch */
+div {
+    width: 100%;
+    border: 1px solid var(--cardBorder);
+
+    img {
+        width: 50%;
+    }
+}
+
+#cssIntroDiv {
+    border: none;
+
+    >* {
+        margin-bottom: 20px;
+    }
+}
+#0{
+    background-color: var(--cardInMansion);
+}
+#1{
+    background-color: var(--cardInSpace);
+}
+#2{
+    background-color: var(--cardInParis);
+}
