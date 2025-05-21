@@ -6,11 +6,14 @@
     --cardInMansion: #1b2d2e;
     --cardInSpace: #3d3147;
     --cardInParis: #223039;
+    --navBar: #412e5d;
+    --titles: "Lobster", sans-serif;
 }
 
 /* Modify to all */
 * {
     margin: 0;
+    margin-bottom: 20px;
     padding: 0;
 }
 
@@ -19,12 +22,8 @@ body {
     color: var(--TextCol);
     cursor: crosshair;
     text-align: center;
-}
-
-.lobster-regular {
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Dancing Script", cursive;
+    font-size: larger;
 }
 
 /* Main section */
@@ -46,10 +45,36 @@ h1 {
     font-size: 0px;
 }
 
+/* navbar */
+header {
+    margin-top: 0px;
+    background-color: var(--navBar);
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            list-style: none;
+        }
+    }
+}
+
+
+/* Titles */
+h2 {
+    font-family:var(--titles);
+}
+
+h3 {
+    font-family:var(--titles);
+}
+
 /* Div touch */
 div {
     width: 100%;
     border: 1px solid var(--cardBorder);
+    margin-top: 10px;
 
     img {
         width: 50%;
@@ -58,17 +83,36 @@ div {
 
 #cssIntroDiv {
     border: none;
-
-    >* {
-        margin-bottom: 20px;
-    }
 }
-#id0{
+
+#id0 {
     background-color: var(--cardInMansion);
 }
-#id1{
+
+#id1 {
     background-color: var(--cardInSpace);
 }
-#id2{
+
+#id2 {
     background-color: var(--cardInParis);
+}
+
+a {
+    color: var(--TextCol);
+    text-decoration: none;
+    font-family:var(--titles);
+}
+#falseButton{
+    border: 1px solid var(--cardBorder);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--navBar);
+}
+#falseButton:hover{
+    transform: scale(1.05);
+}
+#secTem{
+    img{
+        width: 24px;
+    }
 }

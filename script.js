@@ -11,7 +11,7 @@ function sendFetch(url) {
             let divIntro = document.createElement("div");
             let h2NomEntreprise = document.createElement("h2");
             let h3Accroche = document.createElement("h3");
-            let buttonReservation = document.createElement("button");
+            let buttonReservation = document.createElement("a");
             let secActiviters = document.createElement("section");
             let secTemoigniage = document.createElement("section");
             let i = 0;
@@ -29,6 +29,11 @@ function sendFetch(url) {
             h2NomEntreprise.textContent = data["nomCommercial"];
             h3Accroche.textContent = data["phraseAccroche"]
             buttonReservation.textContent = data["texteAppelAction"];
+            buttonReservation.setAttribute("href", `https://jdudon.github.io/gallery/`);
+            buttonReservation.setAttribute("id","falseButton");
+            buttonReservation.setAttribute("target","_blank");
+            secActiviters.setAttribute("id","secAct");
+            secTemoigniage.setAttribute("id","secTem");
             
 
             // For Each Avantages Clients
@@ -62,21 +67,31 @@ function sendFetch(url) {
               data["temoignages"].forEach(tem => {
                 // Create elements
                 let divTemoignages = document.createElement("div");
-                let pUser = document.createElement("p");
+                let pUser = document.createElement("h3");
                 let pExperience = document.createElement("p");
                 let pComm = document.createElement("p");
-                let pRate = document.createElement("p");
+                // let pRate = document.createElement("p");
+                let starNum = [];
                 // Link Child x Parent
                 secTemoigniage.appendChild(divTemoignages);
                 divTemoignages.appendChild(pUser);
                 divTemoignages.appendChild(pExperience);
                 divTemoignages.appendChild(pComm);
-                divTemoignages.appendChild(pRate);
+                // divTemoignages.appendChild(pRate);
+                
                 // Set Value
                 pUser.textContent = tem["prenom"];
                 pExperience.textContent = tem["typeExperience"];
                 pComm.textContent = tem["commentaire"];
-                pRate.textContent = tem["note"];
+                // pRate.textContent = tem["note"];
+                for (let rating = 0; rating < tem["note"]; rating++) {
+                   starNum.push(rating)
+                }
+                starNum.forEach(element => {
+                    let imgStar = document.createElement("img");
+                    divTemoignages.appendChild(imgStar)
+                    imgStar.setAttribute("src",`star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png`)
+                });
                 
             });
     
