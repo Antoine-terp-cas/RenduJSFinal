@@ -12,7 +12,6 @@ function sendFetch(url) {
             let h2NomEntreprise = document.createElement("h2");
             let h3Accroche = document.createElement("h3");
             let buttonReservation = document.createElement("button");
-            let pAvantangeClient = document.createElement("p");
             let secActiviters = document.createElement("section");
             let secTemoigniage = document.createElement("section");
             let i = 0;
@@ -31,6 +30,14 @@ function sendFetch(url) {
             h3Accroche.textContent = data["phraseAccroche"]
             buttonReservation.textContent = data["texteAppelAction"];
             
+
+            // For Each Avantages Clients
+            data["avantagesClients"].forEach(ac => {
+            let pAvantangeClient = document.createElement("p");
+            divIntro.appendChild(pAvantangeClient);
+            pAvantangeClient.textContent = `- ${ac}`;
+            });
+            
             // For Each Activities
             data["activites"].forEach(activity => {
                 // Create elements
@@ -44,7 +51,7 @@ function sendFetch(url) {
                 divActiviter.appendChild(pDescription);
                 divActiviter.appendChild(imgImage);
                 // Set Value
-                divActiviter.setAttribute("id", `${i}`)
+                divActiviter.setAttribute("id", `id${i}`)
                 pNom.textContent = activity["nom"];
                 pDescription.textContent = activity["description"];
                 imgImage.setAttribute("src",`${activity["image-url"]}`);

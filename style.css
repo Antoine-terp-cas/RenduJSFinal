@@ -63,12 +63,12 @@ div {
         margin-bottom: 20px;
     }
 }
-#0{
+#id0{
     background-color: var(--cardInMansion);
 }
-#1{
+#id1{
     background-color: var(--cardInSpace);
 }
-#2{
+#id2{
     background-color: var(--cardInParis);
 }
