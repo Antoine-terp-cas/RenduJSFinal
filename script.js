@@ -56,7 +56,7 @@ function sendFetch(url) {
                 divActiviter.appendChild(pDescription);
                 divActiviter.appendChild(imgImage);
                 // Set Value
-                divActiviter.setAttribute("id", `id${i}`)
+                divActiviter.setAttribute("id", `id${i}`);
                 pNom.textContent = activity["nom"];
                 pDescription.textContent = activity["description"];
                 imgImage.setAttribute("src",`${activity["image-url"]}`);
@@ -85,12 +85,12 @@ function sendFetch(url) {
                 pComm.textContent = tem["commentaire"];
                 // pRate.textContent = tem["note"];
                 for (let rating = 0; rating < tem["note"]; rating++) {
-                   starNum.push(rating)
+                   starNum.push(rating);
                 }
                 starNum.forEach(element => {
                     let imgStar = document.createElement("img");
-                    divTemoignages.appendChild(imgStar)
-                    imgStar.setAttribute("src",`star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png`)
+                    divTemoignages.appendChild(imgStar);
+                    imgStar.setAttribute("src",`star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png`);
                 });
                 
             });
