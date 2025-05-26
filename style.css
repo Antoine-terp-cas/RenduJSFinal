@@ -113,12 +113,14 @@ a {
     transform: scale(1.05);
 }
 #secTem{
+    width: 1073px;
     img{
         width: 24px;
     }
     div{
         padding: var(--padCard);
     }
+ 
 }
 
 #secAct{

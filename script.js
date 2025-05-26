@@ -29,7 +29,7 @@ function sendFetch(url) {
             h2NomEntreprise.textContent = data["nomCommercial"];
             h3Accroche.textContent = data["phraseAccroche"]
             buttonReservation.textContent = data["texteAppelAction"];
-            buttonReservation.setAttribute("href", `https://jdudon.github.io/gallery/`);
+            buttonReservation.setAttribute("href", `oops.html`);
             buttonReservation.setAttribute("id", "falseButton");
             buttonReservation.setAttribute("target", "_blank");
             secActiviters.setAttribute("id", "secAct");
