@@ -51,7 +51,6 @@ header {
     margin-top: 0px;
     background-color: var(--navBar);
     padding: var(--padCard);
-
     ul {
         display: flex;
         justify-content: space-around;

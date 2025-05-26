@@ -25,24 +25,24 @@ function sendFetch(url) {
             jsSec.appendChild(secTemoigniage);
 
             // Define Element Value
-            divIntro.setAttribute("id","cssIntroDiv");
+            divIntro.setAttribute("id", "cssIntroDiv");
             h2NomEntreprise.textContent = data["nomCommercial"];
             h3Accroche.textContent = data["phraseAccroche"]
             buttonReservation.textContent = data["texteAppelAction"];
             buttonReservation.setAttribute("href", `https://jdudon.github.io/gallery/`);
-            buttonReservation.setAttribute("id","falseButton");
-            buttonReservation.setAttribute("target","_blank");
-            secActiviters.setAttribute("id","secAct");
-            secTemoigniage.setAttribute("id","secTem");
-            
+            buttonReservation.setAttribute("id", "falseButton");
+            buttonReservation.setAttribute("target", "_blank");
+            secActiviters.setAttribute("id", "secAct");
+            secTemoigniage.setAttribute("id", "secTem");
+
 
             // For Each Avantages Clients
             data["avantagesClients"].forEach(ac => {
-            let pAvantangeClient = document.createElement("p");
-            divIntro.appendChild(pAvantangeClient);
-            pAvantangeClient.textContent = `- ${ac}`;
+                let pAvantangeClient = document.createElement("p");
+                divIntro.appendChild(pAvantangeClient);
+                pAvantangeClient.textContent = `- ${ac}`;
             });
-            
+
             // For Each Activities
             data["activites"].forEach(activity => {
                 // Create elements
@@ -59,12 +59,12 @@ function sendFetch(url) {
                 divActiviter.setAttribute("id", `id${i}`);
                 pNom.textContent = activity["nom"];
                 pDescription.textContent = activity["description"];
-                imgImage.setAttribute("src",`${activity["image-url"]}`);
+                imgImage.setAttribute("src", `${activity["image-url"]}`);
                 i++;
             });
 
             // For Each Temoigniage
-              data["temoignages"].forEach(tem => {
+            data["temoignages"].forEach(tem => {
                 // Create elements
                 let divTemoignages = document.createElement("div");
                 let pUser = document.createElement("h3");
@@ -72,39 +72,53 @@ function sendFetch(url) {
                 let pComm = document.createElement("p");
                 // let pRate = document.createElement("p");
                 let starNum = [];
+                let empStarNum = [];
                 // Link Child x Parent
                 secTemoigniage.appendChild(divTemoignages);
                 divTemoignages.appendChild(pUser);
                 divTemoignages.appendChild(pExperience);
                 divTemoignages.appendChild(pComm);
                 // divTemoignages.appendChild(pRate);
-                
+
                 // Set Value
                 pUser.textContent = tem["prenom"];
                 pExperience.textContent = tem["typeExperience"];
                 pComm.textContent = tem["commentaire"];
                 // pRate.textContent = tem["note"];
                 for (let rating = 0; rating < tem["note"]; rating++) {
-                   starNum.push(rating);
+                    starNum.push(rating);
                 }
-                starNum.forEach(element => {
-                    let imgStar = document.createElement("img");
-                    divTemoignages.appendChild(imgStar);
-                    imgStar.setAttribute("src",`star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png`);
-                });
+                console.log(starNum);
                 
+                starNum.forEach(element => {
+                        let imgStar = document.createElement("img");
+                        divTemoignages.appendChild(imgStar);
+                        imgStar.setAttribute("src", `star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24_full.png`);
+                    });
+                    console.log(starNum.length);
+                if (starNum.length < 5) {
+                    console.log("inferior");
+                    for (let rating = 0; rating < 5-starNum.length; rating++) {
+                    empStarNum.push(rating);
+                    empStarNum.forEach(element => {
+                        let imgStar = document.createElement("img");
+                        divTemoignages.appendChild(imgStar);
+                        imgStar.setAttribute("src", `star_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png`);
+                    });
+                };
+                };
             });
-    
+
         });
 }
 
 // Element Displayed
 sendFetch(`https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/escape-game.json`);
 //  setTimeout(() => {
-        alert(`⚠ Attention ce site contient des virus ⚠`);
+// alert(`⚠ Attention ce site contient des virus ⚠`);
 //     }, "200");
-let buttonCW=document.getElementById("fA");
-buttonCW.addEventListener("click",()=>{
+let buttonCW = document.getElementById("fA");
+buttonCW.addEventListener("click", () => {
     window.close();
 })
 
