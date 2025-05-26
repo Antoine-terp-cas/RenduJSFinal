@@ -100,7 +100,16 @@ function sendFetch(url) {
 
 // Element Displayed
 sendFetch(`https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/escape-game.json`);
-
+//  setTimeout(() => {
+//         alert(`⚠ Attention ce site contient des virus ⚠`);
+//     }, "200");
+let buttonCW=document.getElementById("fA");
+buttonCW.addEventListener("click",()=>{
+    window.close();
+})
 
 // Tried to test code with another element of the JSON, turns out, you cant, because the objects name are diffrents.
 // sendFetch(`https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/chocolatier.json`);
+
+var map = L.map('map').setView([51.505, -0.09], 13);
+var marker = L.marker([51.5, -0.09]).addTo(map);

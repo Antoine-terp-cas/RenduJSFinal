@@ -8,10 +8,11 @@
     --cardInParis: #223039;
     --navBar: #412e5d;
     --titles: "Lobster", sans-serif;
+    --padCard: 8px;
 }
 
 /* Modify to all */
-* {
+*{
     margin: 0;
     margin-bottom: 20px;
     padding: 0;
@@ -71,7 +72,7 @@ h3 {
 }
 
 /* Div touch */
-div {
+div{
     width: 100%;
     border: 1px solid var(--cardBorder);
     margin-top: 10px;
@@ -115,4 +116,23 @@ a {
     img{
         width: 24px;
     }
+    div{
+        padding: var(--padCard);
+    }
 }
+
+#secAct{
+    div{
+        padding: var(--padCard);
+    }
+}
+footer{
+    display: flex;
+    justify-content: center;
+    #fA{
+        color: var(--TextCol);
+        font-family: var(--padCard);
+        cursor: crosshair;
+    }
+}
+#map { height: 180px; }
