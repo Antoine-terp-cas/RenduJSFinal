@@ -14,7 +14,6 @@
 /* Modify to all */
 *{
     margin: 0;
-    margin-bottom: 20px;
     padding: 0;
 }
 
@@ -32,6 +31,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+        margin-bottom: 20px;
 }
 
 #jsSec>* {
@@ -65,10 +65,12 @@ header {
 /* Titles */
 h2 {
     font-family:var(--titles);
+        margin-bottom: 20px;
 }
 
 h3 {
     font-family:var(--titles);
+        margin-bottom: 20px;
 }
 
 /* Div touch */
@@ -76,26 +78,33 @@ div{
     width: 100%;
     border: 1px solid var(--cardBorder);
     margin-top: 10px;
+        margin-bottom: 20px;
 
     img {
         width: 50%;
     }
 }
-
+div>*{
+        margin-bottom: 20px;
+}
 #cssIntroDiv {
     border: none;
+        margin-bottom: 20px;
 }
 
 #id0 {
     background-color: var(--cardInMansion);
+        margin-bottom: 20px;
 }
 
 #id1 {
     background-color: var(--cardInSpace);
+        margin-bottom: 20px;
 }
 
 #id2 {
     background-color: var(--cardInParis);
+        margin-bottom: 20px;
 }
 
 a {
@@ -108,12 +117,14 @@ a {
     border-radius: 10px;
     padding: 5px;
     background-color: var(--navBar);
+        margin-bottom: 20px;
 }
 #falseButton:hover{
     transform: scale(1.05);
 }
 #secTem{
     width: 1073px;
+        margin-bottom: 20px;
     img{
         width: 24px;
     }
@@ -124,6 +135,7 @@ a {
 }
 
 #secAct{
+        margin-bottom: 20px;
     div{
         padding: var(--padCard);
     }
@@ -131,6 +143,7 @@ a {
 footer{
     display: flex;
     justify-content: center;
+        margin-bottom: 20px;
     #fA{
         color: var(--TextCol);
         font-family: var(--padCard);
